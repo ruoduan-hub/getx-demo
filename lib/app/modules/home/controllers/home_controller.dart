@@ -20,5 +20,7 @@ class HomeController extends GetxController {
     super.onClose();
   }
 
-  void onChangeNavigationBar(int idx) => index.value = idx;
+  void onChangeNavigationBar(int idx) {
+    index.value = idx;
+  }
 }

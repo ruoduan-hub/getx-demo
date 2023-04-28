@@ -27,7 +27,7 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.TK2,
-      page: () => const Tk2View(),
+      page: () => Tk2View(),
       binding: Tk2Binding(),
     ),
   ];

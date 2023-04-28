@@ -5,13 +5,20 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "runApp",
+            "name": "runApp-release",
             "cwd": "./",
             "request": "launch",
             "type": "dart",
             "args": [
                 "--release",
             ]
+        },
+        {
+            "name": "runApp",
+            "cwd": "./",
+            "request": "launch",
+            "type": "dart",
+            "args": []
         },
     ]
 }

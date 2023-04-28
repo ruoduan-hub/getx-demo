@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -14,6 +16,7 @@ final HomeController storeHome = Get.put(HomeController());
 
 class HomeView extends GetView<HomeController> {
   const HomeView({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,26 +40,24 @@ class HomeView extends GetView<HomeController> {
 
         return const HomeCh3View();
       }),
-      bottomNavigationBar: GetBuilder<HomeController>(
-        builder: (controller) => BottomNavigationBar(
-          items: const [
-            BottomNavigationBarItem(
-              icon: Icon(Icons.home),
-              label: 'Home',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.search),
-              label: 'Search',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.person),
-              label: 'Profile',
-            ),
-          ],
-          currentIndex: 0,
-          onTap: storeHome.onChangeNavigationBar,
-        ),
-      ),
+      bottomNavigationBar: Obx(() => BottomNavigationBar(
+            items: const [
+              BottomNavigationBarItem(
+                icon: Icon(Icons.home),
+                label: 'Home',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.search),
+                label: 'Search',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.person),
+                label: 'Profile',
+              ),
+            ],
+            currentIndex: storeHome.index.value,
+            onTap: storeHome.onChangeNavigationBar,
+          )),
     );
   }
 }

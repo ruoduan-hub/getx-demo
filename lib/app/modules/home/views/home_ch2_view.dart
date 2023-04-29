@@ -24,8 +24,9 @@ class ctl extends GetxController {
     list.add(v);
   }
 
-  void onClear() {
-    list = [];
+  void onClear(TextEditingController myController) {
+    list.clear();
+    myController.clear();
   }
 }
 
@@ -74,7 +75,7 @@ class HomeCh2View extends GetView {
                     textStyle: const TextStyle(fontSize: 20),
                   ),
                   onPressed: () {
-                    _ctl.onClear();
+                    _ctl.onClear(myController);
                   },
                   child: const Text('Clear'),
                 )),

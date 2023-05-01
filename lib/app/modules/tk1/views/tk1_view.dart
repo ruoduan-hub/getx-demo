@@ -1,10 +1,9 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
-
 import 'package:get/get.dart';
 
 import '../controllers/tk1_controller.dart';
+
+import 'package:get_xproject/utils/request.dart';
 
 final Tk1Controller store = Get.put(Tk1Controller());
 
@@ -14,6 +13,11 @@ List<Map> ll = [
   {'name': '张5', 'id': '3'},
 ];
 
+void getHttp() async {
+  final response = await request().get('https://dart.dev');
+  print(response);
+}
+
 class Tk1View extends GetView<Tk1Controller> {
   const Tk1View({Key? key}) : super(key: key);
 
@@ -22,10 +26,19 @@ class Tk1View extends GetView<Tk1Controller> {
     List<Map> l1 = List.generate(store.count.toInt(),
         (index) => {'name': 'name-$index', 'id': index}).toList();
 
+    getHttp();
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Tk1View'),
         centerTitle: true,
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () {
+            Get.back();
+            store.onClose();
+          },
+        ),
       ),
       body: Center(
         child: Column(

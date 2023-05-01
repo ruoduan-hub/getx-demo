@@ -7,16 +7,19 @@ class Tk1Controller extends GetxController {
   @override
   void onInit() {
     super.onInit();
+    print('init');
   }
 
   @override
   void onReady() {
     super.onReady();
+    print('load Tk1Controller ....');
   }
 
   @override
   void onClose() {
     super.onClose();
+    print('onClose');
   }
 
   void increment() => count.value++;

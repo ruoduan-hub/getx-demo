@@ -6,6 +6,7 @@ abstract class Routes {
   static const HOME = _Paths.HOME;
   static const TK1 = _Paths.TK1;
   static const TK2 = _Paths.TK2;
+  static const WEBVIEW = _Paths.WEBVIEW;
 }
 
 abstract class _Paths {
@@ -13,4 +14,5 @@ abstract class _Paths {
   static const HOME = '/home';
   static const TK1 = '/tk1';
   static const TK2 = '/tk2';
+  static const WEBVIEW = '/webview';
 }

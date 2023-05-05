@@ -6,6 +6,8 @@ import '../modules/tk1/bindings/tk1_binding.dart';
 import '../modules/tk1/views/tk1_view.dart';
 import '../modules/tk2/bindings/tk2_binding.dart';
 import '../modules/tk2/views/tk2_view.dart';
+import '../modules/webview/bindings/webview_binding.dart';
+import '../modules/webview/views/webview_view.dart';
 
 part 'app_routes.dart';
 
@@ -29,6 +31,11 @@ class AppPages {
       name: _Paths.TK2,
       page: () => Tk2View(),
       binding: Tk2Binding(),
+    ),
+    GetPage(
+      name: _Paths.WEBVIEW,
+      page: () => const WebviewView(),
+      binding: WebviewBinding(),
     ),
   ];
 }

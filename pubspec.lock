@@ -88,6 +88,14 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  fluttertoast:
+    dependency: "direct main"
+    description:
+      name: fluttertoast
+      sha256: "2f9c4d3f4836421f7067a28f8939814597b27614e021da9d63e5d3fb6e212d25"
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "8.2.1"
   get:
     dependency: "direct main"
     description:
@@ -160,6 +168,38 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "2.1.4"
+  quick_actions:
+    dependency: "direct main"
+    description:
+      name: quick_actions
+      sha256: d3de3100c5659ae559ca8b9e863d2739ef766edb71681d507b90a0f2ac81d330
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "1.0.3"
+  quick_actions_android:
+    dependency: transitive
+    description:
+      name: quick_actions_android
+      sha256: "89bfe29909b192eecb9b1769f319159627fbdb6349969c98aa83a3bc885b0107"
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "1.0.5"
+  quick_actions_ios:
+    dependency: transitive
+    description:
+      name: quick_actions_ios
+      sha256: a2920cfbcf62055d38b596b6dee1857cef7db49fa6ead00fdd7834ddc0ba4035
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "1.0.5"
+  quick_actions_platform_interface:
+    dependency: transitive
+    description:
+      name: quick_actions_platform_interface
+      sha256: "2985e12b5fecb5715a35cc0a3b2127b4391e1969e62bd0a4a721b4de21d5fedb"
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "1.0.4"
   sky_engine:
     dependency: transitive
     description: flutter

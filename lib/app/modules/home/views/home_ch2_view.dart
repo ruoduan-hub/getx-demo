@@ -1,6 +1,8 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class ctl extends GetxController {
   List list = [].obs;
@@ -21,12 +23,41 @@ class ctl extends GetxController {
   }
 
   void onPushName(String v) {
-    list.add(v);
+    if (v.isNotEmpty) {
+      list.add(v);
+    } else {
+      Fluttertoast.showToast(
+        msg: '值不能为空 ！',
+        gravity: ToastGravity.CENTER,
+        backgroundColor: const Color.fromRGBO(0, 0, 0, 0.7),
+      );
+    }
   }
 
-  void onClear(TextEditingController myController) {
-    list.clear();
-    myController.clear();
+  void onClear(TextEditingController myController, context) {
+    showCupertinoDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return CupertinoAlertDialog(
+          title: Text('提示'),
+          content: Text('确定要清空吗？'),
+          actions: <Widget>[
+            CupertinoDialogAction(
+              child: Text('确定'),
+              onPressed: () {
+                list.clear();
+                myController.clear();
+                Get.back();
+              },
+            ),
+            CupertinoDialogAction(
+              child: Text('取消'),
+              onPressed: Get.back,
+            ),
+          ],
+        );
+      },
+    );
   }
 }
 
@@ -64,7 +95,10 @@ class HomeCh2View extends GetView {
                       hintText: 'Enter your name',
                       labelText: 'Name',
                     ),
-                    onSubmitted: _ctl.onPushName,
+                    onSubmitted: (v) {
+                      _ctl.onPushName(v);
+                      myController.clear();
+                    },
                   ))),
           Expanded(
             flex: 1,
@@ -75,7 +109,7 @@ class HomeCh2View extends GetView {
                     textStyle: const TextStyle(fontSize: 20),
                   ),
                   onPressed: () {
-                    _ctl.onClear(myController);
+                    _ctl.onClear(myController, context);
                   },
                   child: const Text('Clear'),
                 )),
